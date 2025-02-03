@@ -1,38 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Birthday Card</title>
-    <!-- Google Font-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+    <title>Romantic Birthday Card</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<style>
+  * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+  }
+  body {
+      background-color: #ffccd5;
+  }
+  .card {
+      width: 720px;
+      height: 480px;
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      -webkit-perspective: 1400px;
+      perspective: 1400px;
+      transition: 1s;
+  }
+  .card:hover {
+      transform: rotate(-5deg);
+  }
+  .card:hover .outside {
+      transform: rotateY(-140deg);
+  }
+  .outside, .inside {
+      height: 100%;
+      width: 50%;
+      position: absolute;
+      left: 50.1%;
+  }
+  .inside {
+      background: linear-gradient(to left, #ffe4e1, #ff8fa3 50%);
+      line-height: 2;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+  }
+  .outside {
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      z-index: 1;
+      transform-origin: left;
+      transition: 2s;
+      cursor: pointer;
+  }
+  .front, .back {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: rotateX(0deg);
+  }
+  .front {
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+  }
+  .back {
+      transform: rotateY(180deg);
+      background: linear-gradient(to left, #ffe4e1, #ffffff 30%);
+  }
+  .cake {
+      width: 260px;
+      position: relative;
+      bottom: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0;
+  }
+  .top-layer, .middle-layer, .bottom-layer {
+      height: 90px;
+      width: 260px;
+      background-repeat: repeat;
+      background-size: 60px 100px;
+      background-position: 28px 0;
+      background-image: linear-gradient(
+          transparent 50px,
+          #fedbab 50px,
+          #fedbab 60px,
+          transparent 60px
+      ),
+      radial-gradient(circle at 30px 5px, #994c10 30px, #fcbf29 31px);
+      border-radius: 10px 10px 0 0;
+      position: relative;
+  }
+  .middle-layer {
+      transform: scale(0.85);
+      top: 6px;
+  }
+  .top-layer {
+      transform: scale(0.7);
+      top: 26px;
+  }
+  .candle {
+      height: 50px;
+      width: 15px;
+      background: repeating-linear-gradient(
+          45deg,
+          #fd3018 0,
+          #fd3018 5px,
+          #ffa89e 5px,
+          #ffa89e 10px
+      );
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  .candle:before {
+      content: "";
+      position: absolute;
+      height: 18px;
+      width: 18px;
+      background-color: #ffa500;
+      border-radius: 0 50% 50% 50%;
+      bottom: 50px;
+      transform: rotate(45deg);
+      left: -1px;
+  }
+  .outside p {
+      font-size: 26px;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 4px;
+      font-weight: 600;
+      color: #ff3366;
+  }
+  .message {
+      font-size: 16px;
+      color: #800020;
+      font-weight: 500;
+      text-align: center;
+      padding: 10px;
+  }
+  .giver {
+      font-size: 18px;
+      color: #b3003c;
+      font-weight: 600;
+  }
+  .inside h1 {
+      font-size: 40px;
+      color: #ff3366;
+      font-style: oblique;
+  }
+  </style>
+  
+<body>
     <div class="card">
-      <div class="outside">
-        <div class="front">
-          <p class="cover-text">Happy Birthday <br> My Love ❤️</p>
-          <div class="cake">
-            <div class="top-layer"></div>
-            <div class="middle-layer"></div>
-            <div class="bottom-layer"></div>
-            <div class="candle"></div>
-          </div>
+        <div class="outside">
+            <div class="front">
+                <p style="padding-bottom: 40px;">Happy Birthday, <br> Neelima 💖</p>
+                <div class="cake">
+                    <div class="candle"></div>
+                    <div class="top-layer"></div>
+                    <div class="middle-layer"></div>
+                    <div class="bottom-layer"></div>
+                </div>
+            </div>
+            <div class="back"></div>
         </div>
-        <div class="back"></div>
-      </div>
-      <div class="inside">
-        <p class="message">
-          Happy Birthday, my love! 💖 Every moment with you is magical.  
-          You make my world brighter with your smile, and I cherish every second we spend together.  
-          May your day be filled with love, joy, and all the happiness you bring to my life! 🎉🎂  
-        </p>
-        <h1>🎁</h1>
-      </div>
+        <div class="inside">
+            <p class="message">
+                Happy Birthday, My Love! ❤️ <br> 
+                Every moment with you is a blessing, and I am so grateful to have you in my life. You are my sunshine, my joy, and my greatest love. Today, I celebrate you and the beautiful soul that you are. May this year bring you happiness, love, and all the dreams you hold close to your heart. 💕
+            </p>
+            <p class="giver">With all my love, <br> <strong>Neelima</strong> 💞</p>
+            <h1>🎁</h1>
+        </div>
     </div>
-  </body>
+</body>
 </html>
+
