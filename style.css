@@ -5,11 +5,11 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #fdbf00;
+  background-color: #ffcccb;
 }
 .card {
-  width: 640px;
-  height: 400px;
+  width: 800px;
+  height: 500px;
   position: absolute;
   margin: auto;
   left: 0;
@@ -32,19 +32,28 @@ body {
   width: 50%;
   position: absolute;
   left: 50.1%;
-
 }
 .inside {
-  background: linear-gradient(to left, #e7e7e7, red 50%);
-  line-height: 3;
-  padding: 0 20px;
+  background: linear-gradient(to left, #ffdfd4, #ff758f);
+  line-height: 1.8;
+  padding: 40px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  left: 50%;
-
+}
+.inside h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #b22222;
+}
+.message {
+  font-size: 18px;
+  font-weight: 400;
+  color: #6d1414;
+  max-width: 90%;
+  text-align: center;
 }
 .outside {
   -webkit-transform-style: preserve-3d;
@@ -64,22 +73,30 @@ body {
   transform: rotateX(0deg);
 }
 .front {
-  background-color: #ffffff;
+  background-color: #fff5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.back {
-  transform: rotateY(180deg);
-  background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+.front p {
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: bold;
+  color: #8b0000;
 }
 .cake {
   width: 100%;
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
 }
 .top-layer,
 .middle-layer,
 .bottom-layer {
   height: 80px;
-  width: 240px;
+  width: 260px;
   background-repeat: repeat;
   background-size: 60px 100px;
   background-position: 28px 0;
@@ -128,21 +145,4 @@ body {
   bottom: 48px;
   transform: rotate(45deg);
   left: -1px;
-}
-.outside p {
-  font-size: 23px;
-  text-transform: uppercase;
-  margin-top: 30px;
-  text-align: center;
-  letter-spacing: 6px;
-  color: #000046;
-}
-.inside h1 {
-  font-size: 120px;
-  line-height: 120px;
-  color: ;
-  font-display: block;
-  font-style: oblique;
-  font-family: sans-serif;
-  font-weight: 400px;
 }
